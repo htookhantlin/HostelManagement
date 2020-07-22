@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hkl.mapper.RoomMapper">
+	<insert id="saveRoom" parameterType="roomObj">
+		insert into
+		pos26_room_HKL values
+		(null,#{roomName},#{roomType},#{floor})
+	</insert>
+	
+	<select id="selectAllRoom" resultType="roomObj">
+		select room_id as
+		roomId,
+		room_name as roomName,
+		room_type as roomType,
+		floor as roomFloor
+		from pos26_room_HKL;
+	</select>
+</mapper>

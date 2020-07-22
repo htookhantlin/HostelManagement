@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hkl.mapper.StudentMapper">
+	<insert id="saveStudent" parameterType="stdObj">
+		insert into
+		POS26_STUDENT_HKL
+		values
+		(null,#{stdName},#{stdPhno},#{stdGmail},#{roomId})
+	</insert>
+	<select id="selectAllStudent" resultType="stdObj">
+		select std_id as
+		stdId,
+		std_name as stdName,
+		std_phno as stdPhno,
+		std_gmail as stdGmail,
+		room_id as roomId
+		from POS26_STUDENT_HKL;
+	</select>
+</mapper>

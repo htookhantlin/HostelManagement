@@ -1,0 +1,36 @@
+create table pos26_product_HKL(
+	prod_id int primary key auto_increment,
+	prod_name varchar(50),
+	prod_qty int,
+	prod_pice int,
+	cat_id int,
+	foreign key(cat_id) references pos26_category(cat_id)
+);	
+
+create table pos26_student_HKL(
+	std_id int primary key auto_increment,
+	std_name varchar(50),
+	std_phno varchar(50),
+	std_gmail varchar(50),
+	room_id int,
+	foreign key(room_id) references pos26_room_HKL(room_id)
+);
+
+create table pos26_room_HKL(
+	room_id int primary key auto_increment,
+	room_name varchar(50),
+	room_type varchar(50),
+	floor varchar(50)
+);
+
+
+
+create table pos26_admin_HKL(
+	admin_id int primary key auto_increment,
+	admin_name varchar(50),
+	admin_gmail varchar(50),
+	admin_password varchar(50)
+);
+
+insert into  pos26_room_HKL values
+(null,'Room 103','admin@gmail.com','1234')

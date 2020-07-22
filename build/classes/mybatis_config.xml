@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration 
+	PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<properties resource="database.properties" />
+	<typeAliases>
+		<typeAlias alias="adminObj" type="com.hkl.model.Admin" />
+		<typeAlias alias="roomObj" type="com.hkl.model.Room" />
+		<typeAlias alias="stdObj" type="com.hkl.model.Student" />
+		
+	</typeAliases>
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${db.driver}" />
+				<property name="url" value="${db.url}" />
+				<property name="username" value="${db.user}" />
+				<property name="password" value="${db.password}" />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper resource="com/hkl/mapper/xml/admin.mapper.xml" />
+		<mapper resource="com/hkl/mapper/xml/room.mapper.xml" />
+		<mapper resource="com/hkl/mapper/xml/student.mapper.xml" />
+		
+	</mappers>
+</configuration>
